@@ -1,0 +1,16 @@
+[Unit]
+Description=Gomez Torrent Search Engine written in NodeJS
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/gomez/
+ExecStart=node index.js
+Restart=always
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
